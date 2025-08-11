@@ -13,39 +13,68 @@
 
       <link
          rel="stylesheet"
-         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=play_arrow"
+         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=bedtime,demography,location_on,mail,open_in_new"
       />
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
 
       <link rel="stylesheet" href="./css/homepage.css" />
    </head>
    <body>
       <div class="wrapper">
-         <header>
-            <div class="container">
-               <h1 class="logo">krasimir.hr@icloud.com</h1>
-               <nav>
-                  <ul>
-                     <li><a href="#">Work</a></li>
-                     <li><a href="#">Resume</a></li>
-                     <li><a href="#">Contact</a></li>
-                  </ul>
-               </nav>
-            </div>
-         </header>
          <section id="hero">
             <div class="container">
-               <img src="images/faceshot.png" alt="" />
-               <h1>Hi, I’m Krasi <span class="emoji">👋</span></h1>
-               <p>I build fast, modern, and accessible websites.</p>
-               <p class="description">
-                  <span class="bold">Web Developer</span> skilled in Django and React, crafting full-featured
-                  applications.
-               </p>
-               <a href="#" class="btn">Let’s Work Together</a>
+               <div class="header-and-options">
+                  <h2 class="name">Krasimir Hristov</h2>
+                  <p>Full Stack Developer | Creating End-to-End Web Applications</p>
+                  <div class="contact-btns">
+                     <a href="#"><i class="devicon-github-original"></i></a>
+                     <a href="#"><i class="devicon-linkedin-plain"></i></a>
+                     <a href="#"
+                        ><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1"> mail </span>
+                     </a>
+                     <a href="#"
+                        ><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">
+                           demography
+                        </span>
+                     </a>
+                  </div>
+                  <div class="site-options-btns">
+                     <button><span class="fi fi-gb"></span></button>
+                     <!-- <span class="fi fi-bg"></span> -->
+                     <button><span class="material-symbols-outlined"> bedtime </span></button>
+                  </div>
+               </div>
+               <img class="picture" src="images/faceshot.png" alt="">
             </div>
          </section>
          <main>
             <section id="about">
+               <div class="container">
+                  <p>
+                     I’m a web developer with a lifelong passion for building things on the web. Ever since I first
+                     started exploring how websites worked, I’ve been fascinated by the possibilities—how ideas can take
+                     shape online and reach people anywhere in the world. That curiosity grew into a drive to create
+                     meaningful, well-crafted applications that balance functionality with an enjoyable user experience.
+                  </p>
+
+                  <p>
+                     One of my biggest strengths is problem-solving. I enjoy breaking down complex challenges into
+                     manageable steps and finding solutions that are both practical and elegant. Alongside my technical
+                     work, I bring years of experience working in collaborative team environments outside of
+                     programming. This has taught me how to communicate clearly, adapt to different work styles, and
+                     keep projects moving smoothly even when things get tricky.
+                  </p>
+
+                  <p>
+                     Right now, my goal is to find my place in the web development world—a spot where I can contribute
+                     my skills, keep learning, and be part of something that makes a real impact. I’m excited about
+                     opportunities to work with creative teams, tackle interesting problems, and grow both as a
+                     developer and a teammate.
+                  </p>
+               </div>
+            </section>
+            <section id="projects">
                <div class="container">
                   <h2>Projects</h2>
                   <div class="work">
@@ -86,7 +115,7 @@
                               Code
                            </a>
                            <a href="#">
-                              <span class="material-symbols-outlined"> play_arrow </span>
+                              <span class="material-symbols-outlined"> open_in_new </span>
                               Demo
                            </a>
                         </div>
@@ -165,8 +194,8 @@
                            </ul>
                         </div>
                         <p class="description">
-                           A web-based app where users predict outcomes of professional LoL matches.
-                           Features include real-time match data, point tracking, and leaderboard rankings.
+                           A web-based app where users predict outcomes of professional LoL matches. Features include
+                           real-time match data, point tracking, and leaderboard rankings.
                         </p>
                         <div class="btns">
                            <a href="#">
@@ -176,7 +205,7 @@
                               Code
                            </a>
                            <a href="#">
-                              <span class="material-symbols-outlined"> play_arrow </span>
+                              <span class="material-symbols-outlined"> open_in_new </span>
                               Demo
                            </a>
                         </div>

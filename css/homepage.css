@@ -1,11 +1,10 @@
 @import 'vendors/normalize.css';
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Inter", "Open Sans";
   margin: 0;
   background-color: #0c0e10;
   color: #ffffff;
@@ -18,79 +17,80 @@ body {
 }
 
 .container {
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 0 1rem;
+  max-width: 700px;
+}
+.container h2 {
+  font-family: "Open Sans";
+}
+.container p {
+  font-family: "Work Sans";
+  color: #cfcfcf;
 }
 
-header {
-  top: 0;
-  z-index: 1000;
-}
-header .container {
+#hero .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 1rem 10rem;
 }
-header .logo {
-  font-weight: 400;
-  font-size: 1.5rem;
-}
-header nav ul {
+#hero .container .contact-btns {
   display: flex;
-  list-style: none;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
+  gap: 5px;
+  margin-bottom: 10px;
 }
-header nav ul li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-#hero {
-  text-align: center;
-  min-height: 91vh;
-}
-#hero .container {
-  width: 1000px;
-}
-#hero .container img {
-  width: 225px;
-  object-fit: cover;
-  margin-top: -40px;
-}
-#hero h1 {
-  font-size: 2rem;
-  font-weight: 500;
-  margin: 10px 0;
+#hero .container .contact-btns a {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.6;
+  font-size: 20px;
+  background-color: #131313;
+  border: 1px solid #333333;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
 }
-#hero h1 .emoji {
-  font-size: 2rem;
+#hero .container .contact-btns a span {
+  font-size: 20px;
 }
-#hero p {
-  font-size: 5rem;
-  font-weight: 600;
-  margin: 20px 0;
-  line-height: 1.2;
+#hero .container .contact-btns a:hover {
+  opacity: 1;
 }
-#hero .description {
-  font-size: 2rem;
-  font-weight: 500;
-  color: #9a9ea6;
-  width: 680px;
-  margin: 20px auto;
-  line-height: 1.5;
+#hero .container .site-options-btns {
+  display: flex;
+  gap: 6px;
 }
-#hero .bold {
-  font-weight: 600;
-  color: #b1b5bd;
+#hero .container .site-options-btns button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  background-color: #0c0e10;
+  transition: background-color 0.5s ease;
+  border: 1px solid rgba(0, 0, 0, 0);
+  width: 31px;
+  height: 31px;
+  border-radius: 4px;
+}
+#hero .container .site-options-btns button span {
+  font-size: 20px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+#hero .container .site-options-btns button span:hover {
+  opacity: 1;
+}
+#hero .container .site-options-btns button:hover {
+  background-color: #131313;
+  cursor: pointer;
+}
+#hero .container .picture {
+  height: 160px;
 }
 #hero .btn {
   margin: 20px 0;
@@ -109,16 +109,21 @@ header nav ul li a {
   transform: scale(1.01);
 }
 
-#about {
+#projects {
   border-radius: 20px;
   padding: 5rem 0;
+  display: flex;
+  justify-content: center;
 }
-#about h2 {
-  font-size: 9rem;
-  text-transform: uppercase;
+#projects h2 {
   margin: 0;
 }
-#about .container .work {
+#projects .container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#projects .container .work {
   position: relative;
   background-color: #131313;
   display: flex;
@@ -130,18 +135,18 @@ header nav ul li a {
   overflow: hidden;
   transition: background-color 0.3s ease;
 }
-#about .container .work .work--info {
+#projects .container .work .work--info {
   max-width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-#about .container .work .work--info h2 {
+#projects .container .work .work--info h2 {
   font-size: 2rem;
   text-transform: none;
   font-weight: 500;
 }
-#about .container .work .website-img {
+#projects .container .work .website-img {
   width: 40%;
   height: 200px;
   background-size: cover;
@@ -149,59 +154,60 @@ header nav ul li a {
   border-radius: 16px;
   transition: transform 0.3s ease;
 }
-#about .container .work #kano {
+#projects .container .work #kano {
   background-image: url("../images/kano.png");
 }
-#about .container .work #prediction {
+#projects .container .work #prediction {
   background-image: url("../images/prediction.png");
 }
-#about .container .work .year {
+#projects .container .work .year {
   position: absolute;
   right: 20px;
   top: 10px;
 }
-#about .container .work .description {
-  color: #9a9ea6;
+#projects .container .work .description {
+  color: #cfcfcf;
   margin: 0;
   line-height: 1.4;
 }
-#about .container .work .btns {
+#projects .container .work .btns {
   margin-top: 20px;
   display: flex;
   gap: 10px;
 }
-#about .container .work .btns a {
+#projects .container .work .btns a {
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
   min-width: 80px;
-  font-size: 1rem;
+  min-height: 25px;
+  font-size: 15px;
   background-color: #ffffff;
   color: #000000;
   border-radius: 8px;
   padding: 2px 15px;
 }
-#about .container .work .btns img {
-  height: 25px;
-  width: 25px;
+#projects .container .work .btns img {
+  height: 15px;
+  width: 15px;
 }
-#about .container .work .btns span {
-  font-size: 30px;
+#projects .container .work .btns span {
+  font-size: 15px;
 }
-#about .container .work:hover {
+#projects .container .work:hover {
   background-color: #1f1f1f;
 }
-#about .container .work:hover .website-img {
+#projects .container .work:hover .website-img {
   transform: rotate(-5deg) translate(30px, 90px);
 }
-#about .tech-stacks {
+#projects .tech-stacks {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
 }
-#about .tech-stacks ul {
+#projects .tech-stacks ul {
   display: flex;
   flex-wrap: wrap;
   overflow: visible;
@@ -210,7 +216,7 @@ header nav ul li a {
   margin: 0;
   max-width: 90%;
 }
-#about .tech-stacks ul li {
+#projects .tech-stacks ul li {
   list-style: none;
   display: flex;
   align-items: center;
@@ -222,30 +228,17 @@ header nav ul li a {
   border-radius: 8px;
   padding: 3px;
 }
-#about .tech-stacks ul li img {
+#projects .tech-stacks ul li img {
   height: 12px;
 }
-#about .tech-stacks ul li svg {
+#projects .tech-stacks ul li svg {
   height: 12px;
   width: auto;
 }
-#about .tech-stacks ul li .django {
+#projects .tech-stacks ul li .django {
   fill: white;
 }
-#about .tech-stacks ul li p {
-  margin: 0;
-}
-
-#projects {
-  background-color: #0c0e10;
-  color: #ffffff;
-  min-height: 100vh;
-  border-radius: 20px;
-  padding: 5rem 0;
-}
-#projects h2 {
-  font-size: 9rem;
-  text-transform: uppercase;
+#projects .tech-stacks ul li p {
   margin: 0;
 }
 
