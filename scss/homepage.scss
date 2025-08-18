@@ -12,6 +12,8 @@ $gray: #cfcfcf;
 $container-background: #131313;
 $container-border: 1px solid #333333;
 
+$mobile: 600px;
+
 html {
    scroll-behavior: smooth;
 }
@@ -19,28 +21,37 @@ html {
 body {
    margin: 0;
    background-color: $dark;
-   color: $light;
+   font-family: $p-font-stack;
+   color: $gray;
+}
+
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   color: $gray;
 }
 
 .wrapper {
    display: flex;
    flex-direction: column;
    min-height: 100vh;
+   margin: 70px 0 0;
 }
 
 .container {
-   margin: 50px auto;
+   margin: 0 auto;
    padding: 0 1rem;
    max-width: 700px;
 
    h2 {
       font-family: $header-font-stack;
+      color: $light;
    }
+}
 
-   p {
-      font-family: $p-font-stack;
-      color: $gray;
-   }
+section {
+   margin-bottom: 32px;
 }
 
 #hero {
@@ -137,105 +148,113 @@ body {
 
 #projects {
    border-radius: 20px;
-   padding: 5rem 0;
-   display: flex;
-   justify-content: center;
-
-   h2 {
-      margin: 0;
-   }
 
    .container {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      .work {
-         position: relative;
-         background-color: #131313;
+      .works {
          display: flex;
-         max-width: 780px;
-         min-height: 237px;
-         padding: 20px;
-         border-radius: 8px;
-         border: 1px solid #333333;
-         overflow: hidden;
-         transition: background-color 0.3s ease;
+         flex-direction: column;
+         gap: 30px;
 
-         .work--info {
-            max-width: 60%;
+         .work {
+            position: relative;
+            background-color: #131313;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            h2 {
-               font-size: 2rem;
-               text-transform: none;
-               font-weight: 500;
+            max-width: 780px;
+            min-height: 237px;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #333333;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+
+            @media (max-width: $mobile) {
             }
-         }
 
-         .website-img {
-            width: 40%;
-            height: 200px;
-            background-size: cover;
-            transform: translate(60px, 70px);
-            border-radius: 16px;
-            transition: transform 0.3s ease;
-         }
-
-         #kano {
-            background-image: url('../images/kano.png');
-         }
-
-         #prediction {
-            background-image: url('../images/prediction.png');
-         }
-
-         .year {
-            position: absolute;
-            right: 20px;
-            top: 10px;
-         }
-
-         .description {
-            color: $gray;
-            margin: 0;
-            line-height: 1.4;
-         }
-
-         .btns {
-            margin-top: 20px;
-            display: flex;
-            gap: 10px;
-
-            a {
-               text-decoration: none;
+            .work--info {
+               max-width: 70%;
                display: flex;
-               align-items: center;
-               justify-content: center;
-               gap: 5px;
-               min-width: 80px;
-               min-height: 25px;
-               font-size: 15px;
-               background-color: #ffffff;
-               color: #000000;
-               border-radius: 8px;
-               padding: 2px 15px;
+               flex-direction: column;
+               justify-content: space-between;
+               h2 {
+                  font-size: 1.5rem;
+                  margin: 0;
+                  text-transform: none;
+                  font-weight: 500;
+               }
+
+               @media (max-width: $mobile) {
+                  max-width: 100%;
+               }
             }
 
-            img {
-               height: 15px;
-               width: 15px;
-            }
-
-            span {
-               font-size: 15px;
-            }
-         }
-
-         &:hover {
-            background-color: #1f1f1f;
             .website-img {
-               transform: rotate(-5deg) translate(30px, 90px);
+               width: 60%;
+               height: 260px;
+               background-size: cover;
+               transform: translate(40px, 120px);
+               border-radius: 16px;
+               transition: transform 0.2s ease;
+
+               @media (max-width: $mobile) {
+                  display: none;
+               }
+            }
+
+            #kano {
+               background-image: url('../images/kano.png');
+            }
+
+            #prediction {
+               background-image: url('../images/prediction.png');
+            }
+
+            .year {
+               position: absolute;
+               right: 20px;
+               top: 10px;
+            }
+
+            .description {
+               color: $gray;
+               margin: 0;
+               line-height: 1.4;
+            }
+
+            .btns {
+               margin-top: 20px;
+               display: flex;
+               gap: 10px;
+
+               a {
+                  text-decoration: none;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 5px;
+                  min-width: 80px;
+                  min-height: 25px;
+                  font-size: 15px;
+                  background-color: #ffffff;
+                  color: #000000;
+                  border-radius: 8px;
+                  padding: 2px 15px;
+               }
+
+               img {
+                  height: 15px;
+                  width: 15px;
+               }
+
+               span {
+                  font-size: 15px;
+               }
+            }
+
+            &:hover {
+               background-color: #1f1f1f;
+               .website-img {
+                  transform: rotate(-4deg) translate(30px, 120px);
+               }
             }
          }
       }
@@ -252,7 +271,6 @@ body {
          gap: 10px;
          padding: 0;
          margin: 0;
-         max-width: 90%;
          li {
             list-style: none;
             display: flex;
@@ -283,5 +301,78 @@ body {
             }
          }
       }
+   }
+}
+
+#technologies {
+   .tech-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 10px;
+
+      li {
+         color: #ffffff;
+         background-color: $container-background;
+         border: $container-border;
+         padding: 5px 10px;
+         border-radius: 4px;
+         transition: opacity 0.3s ease;
+         opacity: 0.6;
+
+         &:hover {
+            opacity: 1;
+            cursor: pointer;
+         }
+
+         &.active {
+            opacity: 1;
+         }
+      }
+   }
+
+   .category-items {
+      display: none;
+      flex-wrap: wrap;
+      gap: 5px;
+
+      &.active {
+         display: flex;
+      }
+
+      li {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         gap: 5px;
+         height: 100px;
+         width: 100px;
+         border-radius: 4px;
+         background-color: #222222;
+         border: 1px solid #3d3d3d;
+         img {
+            height: 50px;
+         }
+
+         .django {
+            fill: white;
+            height: 50px;
+            width: 50px;
+         }
+      }
+   }
+}
+
+.footer-div {
+   border-top: 1px solid #9e9e9e;
+   text-align: center;
+   a {
+      color: #fff;
+      text-decoration: none;
+   }
+
+   a:hover {
+      text-decoration: underline;
    }
 }

@@ -7,26 +7,36 @@ html {
 body {
   margin: 0;
   background-color: #0c0e10;
-  color: #ffffff;
+  font-family: "Work Sans";
+  color: #cfcfcf;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #cfcfcf;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 70px 0 0;
 }
 
 .container {
-  margin: 50px auto;
+  margin: 0 auto;
   padding: 0 1rem;
   max-width: 700px;
 }
 .container h2 {
   font-family: "Open Sans";
+  color: #ffffff;
 }
-.container p {
-  font-family: "Work Sans";
-  color: #cfcfcf;
+
+section {
+  margin-bottom: 32px;
 }
 
 #hero .container {
@@ -111,19 +121,13 @@ body {
 
 #projects {
   border-radius: 20px;
-  padding: 5rem 0;
-  display: flex;
-  justify-content: center;
 }
-#projects h2 {
-  margin: 0;
-}
-#projects .container {
+#projects .container .works {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-#projects .container .work {
+#projects .container .works .work {
   position: relative;
   background-color: #131313;
   display: flex;
@@ -135,47 +139,58 @@ body {
   overflow: hidden;
   transition: background-color 0.3s ease;
 }
-#projects .container .work .work--info {
-  max-width: 60%;
+#projects .container .works .work .work--info {
+  max-width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-#projects .container .work .work--info h2 {
-  font-size: 2rem;
+#projects .container .works .work .work--info h2 {
+  font-size: 1.5rem;
+  margin: 0;
   text-transform: none;
   font-weight: 500;
 }
-#projects .container .work .website-img {
-  width: 40%;
-  height: 200px;
-  background-size: cover;
-  transform: translate(60px, 70px);
-  border-radius: 16px;
-  transition: transform 0.3s ease;
+@media (max-width: 600px) {
+  #projects .container .works .work .work--info {
+    max-width: 100%;
+  }
 }
-#projects .container .work #kano {
+#projects .container .works .work .website-img {
+  width: 60%;
+  height: 260px;
+  background-size: cover;
+  transform: translate(40px, 120px);
+  border-radius: 16px;
+  transition: transform 0.2s ease;
+}
+@media (max-width: 600px) {
+  #projects .container .works .work .website-img {
+    display: none;
+  }
+}
+#projects .container .works .work #kano {
   background-image: url("../images/kano.png");
 }
-#projects .container .work #prediction {
+#projects .container .works .work #prediction {
   background-image: url("../images/prediction.png");
 }
-#projects .container .work .year {
+#projects .container .works .work .year {
   position: absolute;
   right: 20px;
   top: 10px;
 }
-#projects .container .work .description {
+#projects .container .works .work .description {
   color: #cfcfcf;
   margin: 0;
   line-height: 1.4;
 }
-#projects .container .work .btns {
+#projects .container .works .work .btns {
   margin-top: 20px;
   display: flex;
   gap: 10px;
 }
-#projects .container .work .btns a {
+#projects .container .works .work .btns a {
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -189,18 +204,18 @@ body {
   border-radius: 8px;
   padding: 2px 15px;
 }
-#projects .container .work .btns img {
+#projects .container .works .work .btns img {
   height: 15px;
   width: 15px;
 }
-#projects .container .work .btns span {
+#projects .container .works .work .btns span {
   font-size: 15px;
 }
-#projects .container .work:hover {
+#projects .container .works .work:hover {
   background-color: #1f1f1f;
 }
-#projects .container .work:hover .website-img {
-  transform: rotate(-5deg) translate(30px, 90px);
+#projects .container .works .work:hover .website-img {
+  transform: rotate(-4deg) translate(30px, 120px);
 }
 #projects .tech-stacks {
   display: flex;
@@ -214,7 +229,6 @@ body {
   gap: 10px;
   padding: 0;
   margin: 0;
-  max-width: 90%;
 }
 #projects .tech-stacks ul li {
   list-style: none;
@@ -240,6 +254,69 @@ body {
 }
 #projects .tech-stacks ul li p {
   margin: 0;
+}
+
+#technologies .tech-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+#technologies .tech-categories li {
+  color: #ffffff;
+  background-color: #131313;
+  border: 1px solid #333333;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
+}
+#technologies .tech-categories li:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+#technologies .tech-categories li.active {
+  opacity: 1;
+}
+#technologies .category-items {
+  display: none;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+#technologies .category-items.active {
+  display: flex;
+}
+#technologies .category-items li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  height: 100px;
+  width: 100px;
+  border-radius: 4px;
+  background-color: #222222;
+  border: 1px solid #3d3d3d;
+}
+#technologies .category-items li img {
+  height: 50px;
+}
+#technologies .category-items li .django {
+  fill: white;
+  height: 50px;
+  width: 50px;
+}
+
+.footer-div {
+  border-top: 1px solid #9e9e9e;
+  text-align: center;
+}
+.footer-div a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-div a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=homepage.css.map */
